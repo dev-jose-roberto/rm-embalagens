@@ -1,7 +1,5 @@
 //=== Imports ===
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&display=swap');
-
-
 // === Colors ===
 @title-color: #060714;
 @title-color-light: #5E5E5E;
@@ -11,15 +9,12 @@
 @body-color: #FDFDFD;
 @footer-bg: #111111;
 @dark-color: #0C0C0C;
-
 // === Font & Typography
-// .5rem = 8px | 1rem = 16px
 @h1-font-size: 2.6rem;
 @huge-font-size: 1.8rem;
 @big-font-size: 1.4rem;
 @h2-font-size: 1rem;
 @normal-font-size: 0.8rem;
-
 //=== Font weight ===
 @font-thin: 300;
 @font-regular: 400;
@@ -27,22 +22,17 @@
 @font-semi-bold: 600;
 @font-bold: 700;
 @font-black: 900;
-
-
 // === Margins ===
 @max-margin: 40px;
 @large-margin: 30px;
 @medium-margin: 20px;
 @small-margin: 10px;
 @min-margin: 5px;
-
 // === Shadows ===
 @sombra-padrao: 20px 20px 40px #0000003b, -20px -20px 40px #ffffff46;
 @sombra-projetada: 10px 10px 10px #0000007f;
-
 // === Radius ===
 @arredondado: 10px;
-
 
 * {
     box-sizing: border-box !important;
@@ -77,6 +67,32 @@ img {
     text-transform: uppercase;
 }
 
+.thin {
+    font-weight: @font-thin;
+}
+
+.regular {
+    font-weight: @font-regular ;
+}
+
+.medium {
+    font-weight: @font-medium ;
+}
+
+.semi-bold {
+    font-weight: @font-semi-bold ;
+}
+
+.bold {
+    font-weight: @font-bold ;
+}
+
+.black {
+    font-weight: @font-black ;
+}
+
+
+
 // === Layout configs ===
 .main-container {
     width: 100%;
@@ -95,6 +111,7 @@ img {
         padding: @large-margin;
 
         &.header {
+            padding-bottom: @small-margin;
             flex-direction: column;
         }
     }
@@ -104,8 +121,6 @@ img {
 .logo {
     max-width: 90px;
 }
-
-
 
 header {
     &>.item {
@@ -128,8 +143,8 @@ header {
 
                 &.active {
                     color: #060714;
-                    font-weight: bolder;
                     border-bottom: 4px inset @dark-color  !important;
+                    .bold()
                 }
 
                 &:hover {
@@ -155,8 +170,6 @@ header {
     font-size: @h2-font-size;
     font-weight: @font-medium;
 }
-
-
 
 // Banner Principal
 main {
@@ -202,11 +215,8 @@ main {
                     box-shadow: @sombra-padrao;
                     border: 2px solid @main-color-light;
                     background: @body-color;
+                    transform: translate(-3px, -2px);
                 }
-            }
-
-            &.rounded {
-                border-radius: @large-margin;
             }
         }
     }
@@ -255,7 +265,6 @@ main {
                     background: @body-color;
                     padding: 3px;
                     font-weight: bolder;
-
 
                     label {
                         font-size: @big-font-size;
@@ -307,20 +316,19 @@ main {
 
     .catalog {
         display: grid;
+        width: fit-content;
         grid-template-columns: repeat(4, 1fr);
         gap: @max-margin;
 
         .product {
             @largura: 200px;
             @altura: 240px;
-
             display: flex;
             align-items: center;
             justify-content: center;
             max-width: @largura;
             height: @altura;
             position: relative;
-
 
             .mask {
                 opacity: 0;
@@ -366,7 +374,6 @@ main {
             &:hover .mask {
                 opacity: 1;
                 border: 3px solid @main-color-light;
-
             }
 
             img {
@@ -380,7 +387,6 @@ main {
 
     .more {
         color: @main-color;
-        margin-top: @large-margin;
         font-size: 1.5em;
 
         i {
@@ -399,7 +405,6 @@ main {
 
     .content {
         justify-content: space-evenly;
-
 
         #sobre-img {
             height: 320px;
@@ -431,8 +436,12 @@ main {
                     color: @title-color-light;
 
                     a {
-                        color: #000;
+                        color: inherit;
                         text-decoration: underline;
+
+                        &:hover {
+                            color: #000;
+                        }
                     }
                 }
             }
@@ -460,15 +469,15 @@ main {
 
     // Campo genérico global
     .item {
-        height: max-content;
         position: relative;
 
         // Área de texto
         .contact-text {
             display: inherit;
             align-items: inherit;
+            justify-content: inherit;
             flex-direction: column;
-            min-height: 100% !important;
+            min-width: 250px;
 
             // ENTRE EM CONTATO
             .main-title {
@@ -501,35 +510,38 @@ main {
                     font-size: @big-font-size;
                     color: @main-color;
                     margin: @small-margin 0;
-                    width: 100%;
+                    width: min(500px, 100%);
 
                     // CONTEÚDO/MODELO
                     .content {
                         display: inherit;
-                        width: 250px;
-                    }
+                        align-items: inherit;
+                        width: 300px;
 
-                    // ICONE/MODELO
-                    img {
-                        max-height: 1.5em;
-                        margin-right: @medium-margin;
-                        color: @main-color;
+                        i {
+                            margin-right: @large-margin;
+                            font-size: 1.8em;
+                        }
                     }
 
                     // BOTÃO GENÉRICO/MODELO
                     .contact-button {
                         font-size: 1rem;
                         font-weight: bolder;
-                        color: white;
-                        background-color: @main-color;
+                        text-align: center;
                         padding: @min-margin @small-margin;
                         border-radius: @large-margin;
-                        border: 2px solid transparent;
+                        color: @main-color-light;
+                        background-color: @body-color;
+                        border: 2px solid @main-color-light;
+
 
                         &:hover {
-                            color: @main-color-light;
-                            background-color: @body-color;
-                            border: 2px solid @main-color-light;
+                            color: white;
+                            background-color: @main-color;
+                            border: 2px solid transparent;
+                            box-shadow: @sombra-padrao;
+                            transform: translate(-3px, -2px);
                         }
                     }
                 }
@@ -537,7 +549,6 @@ main {
         }
     }
 }
-
 
 // Rodapé
 footer {
@@ -548,10 +559,6 @@ footer {
     .main-container {
         padding: @small-margin  !important;
         color: @body-color;
-
-        span {
-            font-size: 12px;
-        }
 
         div {
             display: flex;
@@ -570,7 +577,6 @@ footer {
     .logo {
         filter: contrast(0) brightness(999);
     }
-
 
     ul {
         min-height: 100%;
@@ -591,5 +597,10 @@ footer {
                 }
             }
         }
+    }
+
+    span {
+        font-size: 12px;
+        color: @title-color-light;
     }
 }
