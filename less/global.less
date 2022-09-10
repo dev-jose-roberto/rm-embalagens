@@ -623,33 +623,34 @@ footer {
             justify-content: center;
             flex-direction: column;
 
+            .logo {
+                filter: contrast(0) brightness(999);
+            }
+
             a {
                 color: @body-color;
                 font-weight: @font-black;
                 font-size: 18px;
             }
 
-            .logo {
-                filter: contrast(0) brightness(999);
-            }
+        }
 
-            ul {
-                min-height: 100%;
-                padding: 0 @medium-margin;
+        ul {
+            min-height: 100%;
+            padding: 0 @medium-margin;
 
-                li {
-                    font-weight: 300;
-                    list-style: none;
-                    padding: 10px;
+            li {
+                font-weight: 300;
+                list-style: none;
+                padding: 10px;
 
-                    a {
-                        color: @body-color;
+                a {
+                    color: @body-color;
 
-                        &:hover {
-                            color: @main-color;
-                            text-decoration: underline double;
-                            line-height: auto;
-                        }
+                    &:hover {
+                        color: @main-color;
+                        text-decoration: underline double;
+                        line-height: auto;
                     }
                 }
             }
