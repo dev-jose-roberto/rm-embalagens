@@ -10,33 +10,37 @@
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="lib/fontawesome-pro-5.13.0-web/css/all.css" />
     <link rel="stylesheet/less" type="text/css" href="less/global.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/home/main.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/home/mobile.less" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.3/less.js"></script>
   </head>
 
   <body>
+    <!-- NAVBAR -->
     <header class="main-container">
       <div class="item">
-        <a href="index.html"
-          ><img src="img/logo.png" alt="logo" class="logo"
-        /></a>
-        <nav>
-          <a href="index.html" class="nav-item active"
-            ><i class="fal fa-home"></i>HOME</a
-          >
-          <a href="#produtos" class="nav-item"
-            ><i class="fal fa-shopping-cart"></i>PRODUTOS</a
-          >
-          <a href="#parceiros" class="nav-item"
-            ><i class="fal fa-user-friends"></i>PARCEIROS</a
-          >
-          <a href="#contato" class="nav-item"
-            ><i class="fal fa-phone-alt"></i>CONTATO</a
-          >
-        </nav>
+        <!-- Logo -->
+        <a href="index.html"><img src="img/logo.png" alt="logo" class="logo"/></a>
+        
+        <!-- Menu -->
+        <div class="nav-bar" id="menu">
+          <i class="fas fa-arrow-left minimize mobile" onclick="menuState(false)"></i>
+          <nav>
+          <a href="#" class="nav-item active" onclick="menuState(false)"><i class="fas fa-home"></i>HOME</a>
+          <a href="#produtos" class="nav-item" onclick="menuState(false)"><i class="fal fa-shopping-cart"></i>PRODUTOS</a>
+          <a href="#parceiros" class="nav-item" onclick="menuState(false)"><i class="fal fa-user-friends"></i>PARCEIROS</a>
+          <a href="#contato" class="nav-item" onclick="menuState(false)"><i class="fal fa-phone-alt"></i>CONTATO</a>
+          </nav>
+        </div>
+
+        <!-- Menu -->
+        <i class="fas fa-bars menu mobile" onclick="menuState(true)"></i>
+
       </div>
     </header>
 
+    <!-- PRINCIPAL -->
     <main class="main-container">
       <div class="item">
         <div class="header">
@@ -47,11 +51,11 @@
           </h1>
 
           <div class="button">
-            <a class="main-button" href="#">FAÇA SUA ENCOMENDA</a>
+            <a class="main-button" href="https://www.instagram.com/rmembalagens/">FAÇA SUA ENCOMENDA</a>
           </div>
         </div>
 
-        <div class="carousel">
+        <div id="carousel">
           <div class="main-img">
             <div id="carousel-images">
               <img
@@ -100,74 +104,107 @@
         <div class="catalog item">
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA PLÁSTICA MODELO ALÇA VAZADA</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
-            <img src="img/inicial/IMG-20220726-WA0034.jpg" alt="produto" />
+            <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA PLÁSTICA MODELO ALÇA FITA</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0040.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA PLÁSTICA MODELO CADEADO</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0042.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA PLÁSTICA MODELO ALÇA OMBRO</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0043.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA PLÁSTICA MODELO ALÇA FITA</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0046.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA EM TNT COMUM</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0075.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA EM TNT METALIZADO</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0074.jpg" alt="produto" />
           </div>
 
           <div class="product">
             <div class="mask">
-              <h2 class="main-title title">SACOLA</h2>
-              <a href="#" class="order">ENCOMENDAR</a>
+              <h2 class="main-title title">SACOLA ALGODÃO</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
+            </div>
+            <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
+          </div>
+
+          <div class="product">
+            <div class="mask">
+              <h2 class="main-title title">SACOLA PAPEL</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
+            </div>
+            <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
+          </div>
+
+          <div class="product">
+            <div class="mask">
+              <h2 class="main-title title">ETIQUETAS BORDADAS</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
+            </div>
+            <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
+          </div>
+
+          <div class="product">
+            <div class="mask">
+              <h2 class="main-title title">ETIQUETA EM METAL</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
+            </div>
+            <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
+          </div>
+
+          <div class="product">
+            <div class="mask">
+              <h2 class="main-title title">PRODUTOS GRÁFICOS</h2>
+              <a href="https://www.instagram.com/rmembalagens/" class="order">ENCOMENDAR</a>
             </div>
             <img src="img/inicial/IMG-20220726-WA0032.jpg" alt="produto" />
           </div>
         </div>
-        <a href="#" class="title sub-title more">
+        <a href="https://www.instagram.com/rmembalagens/" class="title sub-title more">
           <i class="fas fa-list"></i>CONFERIR MAIS CATEGORIAS
         </a>
       </div>
     </section>
 
+    <!-- SOBRE -->
     <section class="main-container">
       <div class="item" id="sobre">
         <div class="item header">
@@ -185,7 +222,7 @@
             id="sobre-img"
           />
 
-          <div class="sobre">
+          <div class="about">
             <div class="info">
               <h1 class="title main-title">QUEM SOMOS?</h1>
               <p class="info-text">
@@ -220,6 +257,7 @@
       </div>
     </section>
 
+    <!-- PARCEIROS -->
     <section class="main-container">
       <div class="item" id="parceiros">
         <div class="item header">
@@ -232,82 +270,22 @@
 
         <div class="item partners">
           <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
+            <span class="bold main-color">José Roberto</span
             ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
+              src="img/inicial/jose.jpg"
               class="partner-photo"
             />
             <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
-            ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
-              class="partner-photo"
-            />
-            <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
-            ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
-              class="partner-photo"
-            />
-            <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
-            ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
-              class="partner-photo"
-            />
-            <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
-            ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
-              class="partner-photo"
-            />
-            <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="partner">
-            <span class="bold main-color">Maria Mourão</span
-            ><img
-              src="img/inicial/WhatsApp Image 2022-07-27 at 16.44.38 (3).jpeg"
-              class="partner-photo"
-            />
-            <div class="partner-media">
-              <a href="#"><i class="fas fa-globe-americas"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/dev-jose-roberto"><i class="fas fa-globe-americas"></i></a>
+              <a href="wa.me/5521997294566"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/josee.nt/"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!---Contato--->
+    <!--- CONTATO --->
     <section class="main-container">
       <div class="item" id="contato">
         <div class="item header">
@@ -318,7 +296,7 @@
           </h2>
         </div>
 
-        <div class="item">
+        <div class="item contact">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58809.48443130842!2d-43.61131257623399!3d-22.891496795245867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be17999363715%3A0x46c3f27867ad9332!2sCampo%20Grande%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1662176077455!5m2!1spt-BR!2sbr"
             width="560"
@@ -344,7 +322,7 @@
                 <div class="content">
                   <i class="fab fa-whatsapp"></i><b>(21) 96428-2763</b>
                 </div>
-                <a href="#" class="contact-button">MENSAGEM</a>
+                <a href="wa.me/5521964282763" class="contact-button">MENSAGEM</a>
               </div>
 
               <div class="contact-media">
@@ -359,26 +337,36 @@
       </div>
     </section>
 
-    <!---Rodapé--->
+    <!--- RODAPÉ --->
     <footer class="main-container">
       <div class="main-container">
         <div class="end">
-          <a href="https://www.instagram.com/rmembalagens/">
+          <a href="index.html">
             <img src="img/logo.png" alt="logo" class="logo" />
           </a>
-          <a href="#">RM EMBALAGENS</a>
+          <a href="index.html">RM EMBALAGENS</a>
         </div>
 
         <ul>
-          <li><a href="#">Trabalhe conosco</a></li>
-          <li><a href="#">Contato via e-mail</a></li>
-          <li><a href="#">Parceria</a></li>
+          <li>
+            <a href="https://www.instagram.com/rmembalagens/"
+              >Trabalhe conosco</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/rmembalagens/"
+              >Contato via e-mail</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/rmembalagens/">Parceria</a>
+          </li>
         </ul>
       </div>
 
       <div class="main-container">
         <span class="thin"
-          >RM EMBALAGENS | FABRICANTE E DISTRIBUIDORA NACIONAL</span
+          ><span class="desc">RM EMBALAGENS | </span>FABRICANTE E DISTRIBUIDORA NACIONAL</span></span
         >
       </div>
     </footer>

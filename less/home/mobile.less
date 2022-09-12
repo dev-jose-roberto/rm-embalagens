@@ -1,0 +1,343 @@
+@import url(../global.less);
+@import url(../home/main.less);
+
+// Tablet
+@media screen and (max-width:1024px) {
+    .main-container {
+        padding: @medium-margin;
+
+        .item {
+            padding: @medium-margin 0;
+            padding-top: @small-margin ;
+
+            &.header {
+                padding-bottom: @small-margin  !important;
+            }
+        }
+    }
+
+    main {
+        #carousel {
+            display: none;
+        }
+    }
+
+    #produtos {
+        .catalog {
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            gap: @max-margin @medium-margin;
+
+            .product {
+                @altura: 200px;
+                @largura: 160px;
+
+                max-width: none;
+                width: 100%;
+                flex-direction: row-reverse;
+
+                img {
+                    height: @altura;
+                    width: @largura;
+                }
+
+                .mask {
+                    background: none;
+                    backdrop-filter: none;
+                    padding: @medium-margin;
+                    width: fit-content;
+                    height: @altura;
+                    position: relative;
+                    opacity: 1;
+                    border: none;
+
+                    .main-title {
+                        color: @dark-color;
+                        width: @largura;
+
+                    }
+
+                    .order {
+                        border: 2px solid @main-color;
+                        background-color: @body-color;
+                        color: @main-color;
+                        margin: @small-margin 0;
+
+                        &:hover {
+                            color: white;
+                            background-color: @main-color;
+                            border: 2px solid transparent;
+                            transform: @pop-translation;
+                            box-shadow: @sombra-padrao;
+                        }
+                    }
+
+                    &:hover {
+                        border: none;
+                    }
+                }
+
+                &:hover {
+                    transform: none;
+
+                    .mask {
+                        border: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+
+    #sobre {
+        .content {
+            flex-direction: column;
+        }
+
+        .about {
+            margin: @large-margin 0;
+        }
+    }
+
+    #contato {
+        .contact {
+            flex-direction: column;
+
+            iframe {
+                max-width: 600px;
+                max-height: 300px;
+            }
+
+            .contact-text {
+                margin: @medium-margin 0 !important;
+            }
+        }
+    }
+}
+
+// Smartphone
+@media screen and (max-width:768px) {
+    .mobile {
+        display: flex !important;
+    }
+
+    .main-title {
+        font-size: @huge-font-size;
+    }
+
+    .logo {
+        max-width: 60px;
+    }
+
+    header {
+        padding: @min-margin @medium-margin  !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        backdrop-filter: blur(10px);
+        background: #fafafa6c;
+        box-shadow: 2px 6px 8px -2px #00000012;
+
+        .item {
+            padding: @small-margin 0 !important;
+        }
+
+        .nav-bar {
+            align-items: stretch;
+            justify-content: center;
+            display: inherit;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 100%;
+            z-index: 99;
+            background: inherit;
+            background: @body-color;
+
+
+            .minimize {
+                display: flex !important;
+            }
+
+            nav {
+                flex-direction: inherit;
+                align-items: center;
+
+                .nav-item {
+                    padding: @large-margin 0 !important;
+                    margin: 0 !important;
+                    width: 100% !important;
+                    display: inherit;
+                    align-items: inherit;
+                    justify-content: center;
+                    font-size: @big-font-size;
+
+                    &.active {
+                        border-bottom: none !important;
+                    }
+
+                    &:hover {
+                        border: none !important;
+                        color: @main-color  !important;
+                        background-color: @subtitle-color-light;
+                    }
+
+                    &:focus {
+                        color: @main-color  !important;
+                    }
+                }
+            }
+
+            &.open {
+                left: 0;
+            }
+        }
+    }
+
+    main {
+        margin-top: 100px;
+
+        .item {
+            .header {
+                align-items: center;
+
+                h2 {
+                    font-size: 1em;
+                    width: fit-content;
+                }
+
+                h1,
+                span.main-color {
+                    width: 260px;
+                    line-height: 2.5rem;
+                    font-size: 2rem;
+                }
+            }
+
+            .button {
+                align-items: center;
+            }
+        }
+    }
+
+    #produtos {
+        .catalog {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: none;
+            gap: @max-margin 0;
+
+            .product {
+                @altura: 160px !important;
+                @largura: 200px !important;
+
+                max-width: none;
+                width: 100%;
+
+                img {
+                    max-height: @altura;
+                    max-width: @largura;
+                }
+
+                .mask {
+                    height: fit-content;
+
+                    .order {
+                        padding: @min-margin @medium-margin  !important;
+                    }
+                }
+            }
+        }
+
+        .more {
+            font-size: @big-font-size;
+        }
+    }
+
+    #sobre {
+        .content {
+            flex-direction: column;
+
+            #sobre-img {
+
+                max-height: 200px;
+                width: min(300px, 100%);
+            }
+        }
+
+        .about {
+            margin: @large-margin 0;
+
+            .info {
+                max-width: 300px !important;
+
+                .title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #contato {
+        .contact {
+            flex-direction: column;
+            border-radius: @arredondado;
+            box-shadow: @sombra-padrao;
+            border: 2px solid @main-color;
+            padding: 0 !important;
+
+            iframe {
+                display: none;
+            }
+
+            .contact-text {
+                margin: @medium-margin 0 !important;
+
+                .contacts {
+                    .contact-media {
+                        align-items: center;
+                        flex-direction: column;
+                        margin: @medium-margin 0;
+
+                        .content {
+                            justify-content: space-evenly;
+                            width: fit-content;
+
+                            i {
+                                margin-right: @small-margin;
+                            }
+                        }
+
+                        .contact-button {
+                            width: min(200px, 100%);
+                            margin-top: @small-margin;
+                            color: white;
+                            background-color: @main-color;
+                            border: 2px solid transparent;
+
+                            &:hover {
+                                color: @main-color;
+                                background-color: @body-color;
+                                border: 2px solid @main-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .main-container {
+            flex-direction: column-reverse;
+        }
+
+        .desc {
+            display: none;
+        }
+    }
+}
