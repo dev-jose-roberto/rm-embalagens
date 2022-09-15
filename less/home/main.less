@@ -52,7 +52,6 @@ main {
     }
 
     #carousel {
-        transition: all .5s !important;
 
         .main-img {
             width: 500px;
@@ -63,6 +62,7 @@ main {
             box-shadow: @sombra-padrao;
 
             #carousel-images {
+                transition: all 1s !important;
                 width: inherit;
                 height: inherit;
                 display: flex;
@@ -227,6 +227,7 @@ main {
                 width: @largura;
                 height: @altura;
                 object-fit: cover;
+                object-position: right;
                 box-shadow: @sombra-padrao;
             }
         }
