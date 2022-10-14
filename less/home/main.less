@@ -160,7 +160,7 @@ main {
 
         .product {
             @largura: 200px;
-            @altura: 240px;
+            @altura: 200px;
 
 
             display: flex;
@@ -225,9 +225,10 @@ main {
             img {
                 border-radius: @arredondado;
                 width: @largura;
+                min-width: @largura;
                 height: @altura;
-                object-fit: cover;
-                object-position: right;
+                object-fit: fill;
+                object-position: bottom;
                 box-shadow: @sombra-padrao;
             }
         }
@@ -256,7 +257,7 @@ main {
 
         #sobre-img {
             max-height: 320px;
-            width: min(560px, 100%);
+            width: min(450px, 100%);
             object-fit: cover;
             border-radius: @arredondado;
             box-shadow: @sombra-padrao;

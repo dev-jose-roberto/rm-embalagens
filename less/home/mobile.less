@@ -31,22 +31,23 @@
 
             .product {
                 @altura: 200px;
-                @largura: 160px;
+                @largura: 200px;
 
                 max-width: none;
                 width: 100%;
                 flex-direction: row-reverse;
 
                 img {
-                    height: @altura;
-                    width: @largura;
+                    min-width: 0 !important;
+                    height: calc(@altura * 3/4);
+                    width: calc(@largura * 3/4);
                 }
 
                 .mask {
                     background: none;
                     backdrop-filter: none;
-                    padding: @medium-margin;
                     width: fit-content;
+                    padding-right: 0;
                     height: @altura;
                     position: relative;
                     opacity: 1;
@@ -233,7 +234,7 @@
 
             .product {
                 @altura: 160px !important;
-                @largura: 200px !important;
+                @largura: 140px !important;
 
                 max-width: none;
                 width: 100%;
